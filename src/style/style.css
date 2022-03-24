@@ -8,6 +8,7 @@ body {
   background-size: cover;
   background-position: center;
   color: white;
+  line-height: 1.6;
 }
 main {
   display: flex;
@@ -19,7 +20,7 @@ img {
   background-color: rgba(255, 255, 255, .6);
   border-radius: 20px;
 }
-.current-weather, .weather-info, .weather-details, .daily-forecast, .hourly-forecast {
+.weather-info, .weather-details, .daily-forecast, .hourly-forecast {
   background-color: var(--main-bg);
   display: flex;
   flex-direction: row;
@@ -27,8 +28,15 @@ img {
   margin: 10px;
   padding: 10px;
   border-radius: 20px;
+  box-shadow: 
+  inset 3px 3px 5px white,
+  3px 3px 5px black
+  ;
 }
 .current-weather {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background: none;
   margin: 0;
   padding:0;
@@ -37,8 +45,24 @@ img {
   flex-direction: column;
   text-transform: capitalize;
 }
+.weather-description {
+  font-size: 1.5em;
+}
+.current-temperature {
+  font-size:1.8em;
+}
 .weather-details {
   flex-direction: column;
+  gap: 5px;
+}
+.detail-container {
+  margin: 0 20px;
+}
+.detail-description {
+  font-size: 1.2em;
+}
+.detail-value {
+  font-size: 1.5em;
 }
 .daily-button, .hourly-button, .back-hourly, .forward-hourly {
   background-color: var(--main-bg);
@@ -48,6 +72,10 @@ img {
   outline:none;
   border-radius: 10px;
   border: none;
+  box-shadow: 
+  inset 1px 1px 3px white,
+  3px 3px 5px black
+  ;
 }
 .active-button {
   border: 3px solid rgba(255, 255, 255, 0.8);
