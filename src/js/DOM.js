@@ -106,6 +106,7 @@ function initDailyForecast() {
   for(let i=0; i<7; i++) {
     const day = document.createElement('div')
     day.classList.add('day'+i)
+    day.classList.add('daily')
     const dayName = document.createElement('div')
     dayName.classList.add('day-name')
     const temperature = document.createElement('div')
@@ -178,7 +179,7 @@ function setWeatherInformation(weatherData, locationData) {
   city.textContent = locationData.name
   currentTemperature.textContent = Math.round(weatherData.current.temp) + ' \u00B0F'
   currentWeatherIcon.src = 'https://openweathermap.org/img/wn/' + weatherData.current.weather[0].icon +  '@2x.png'
-  
+
   feelsLike.textContent = Math.round(weatherData.current.feels_like) + ' \u00B0F'
   humidity.textContent = weatherData.current.humidity
   rainChance.textContent = weatherData.daily[0].pop*100 + '%'

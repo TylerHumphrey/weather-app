@@ -2,7 +2,7 @@ import * as API from './API'
 import * as DOM from './DOM'
 import * as Utils from './Utils'
 import '../style/style.css'
-import '../assets/snowy.jpg'
+import snowy from '../assets/snowy.jpg'
 
 
 
@@ -37,8 +37,11 @@ const dailyButton = document.querySelector('.daily-button')
 const hourlyButton = document.querySelector('.hourly-button')
 const forwardButton = document.querySelector('.forward-hourly')
 const backButton = document.querySelector('.back-hourly')
+let background = snowy
 
-document.body.style.backgroundImage = "url('../assets/snowy.jpg')"
+console.log(snowy)
+document.body.style.backgroundImage = 'url(' + snowy+ ')'
+
 
 // Event Listeners
 dailyButton.addEventListener('click', () => {

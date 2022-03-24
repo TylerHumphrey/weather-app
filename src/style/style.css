@@ -1,50 +1,64 @@
 :root {
   --body-bg: rgb(32, 32, 32);
   --wrapper-bg: rgb(29, 29, 29);
-  --main-bg: rgb(7, 41, 102);
+  --main-bg: rgba(7, 40, 102, 0.8);
 }
 body {
   background-color: var(--body-bg);
+  background-size: cover;
   color: white;
 }
-
 main {
-  background-color: var(--main-bg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
 }
-.current-weather {
-  background-color: rgb(105, 20, 20);
+img {
+  background-color: rgba(255, 255, 255, .6);
+  border-radius: 20px;
+}
+.current-weather, .weather-info, .weather-details, .daily-forecast, .hourly-forecast {
+  background-color: var(--main-bg);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+}
+.current-weather {
+  background: none;
+  margin: 0;
+  padding:0;
 }
 .weather-info {
-  background-color: rgb(58, 11, 11);
-  display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-transform: capitalize;
 }
 .weather-details {
-  background-color: rgb(182, 26, 26);
-  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+}
+.daily-button, .hourly-button, .back-hourly, .forward-hourly {
+  background-color: var(--main-bg);
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  outline:none;
+  border-radius: 10px;
+  border: none;
 }
 .daily-forecast {
-  background-color: darkblue;
-  display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
+  flex-wrap:wrap;
 }
 .hourly-forecast {
-  background-color: darkblue;
-  display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  flex-wrap:wrap;
+}
+.daily, .hourly {
+  margin: 10px
 }
 .hidden {
   display: none;
