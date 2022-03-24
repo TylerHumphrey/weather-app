@@ -46,13 +46,21 @@ document.body.style.backgroundImage = 'url(' + snowy+ ')'
 // Event Listeners
 dailyButton.addEventListener('click', () => {
   if(activeForecast=='hourly'){
-    DOM.toggleForecast(activeForecast)
+    dailyButton.classList.toggle('active-button')
+    hourlyButton.classList.toggle('active-button')
+    forwardButton.classList.toggle('hidden')
+    backButton.classList.toggle('hidden')
+    DOM.toggleForecast()
   activeForecast='daily'
   }
 })
 hourlyButton.addEventListener('click', () => {
   if(activeForecast=='daily'){
-      DOM.toggleForecast(activeForecast) 
+    dailyButton.classList.toggle('active-button')
+    hourlyButton.classList.toggle('active-button')
+    forwardButton.classList.toggle('hidden')
+    backButton.classList.toggle('hidden')
+    DOM.toggleForecast() 
   activeForecast='hourly'
   }
 })
@@ -60,6 +68,10 @@ forwardButton.addEventListener('click', () => {
   if(hourlyStart < 40) {
     hourlyStart+=8
     hourlyEnd+=8
+    backButton.classList.add('active-button')
+  }
+  if(hourlyStart == 40) {
+    forwardButton.classList.remove('active-button')
   }
   DOM.setHourlyForecast(weatherdata, hourlyStart, hourlyEnd)
 })
@@ -67,6 +79,10 @@ backButton.addEventListener('click', () => {
   if(hourlyStart > 0) {
     hourlyStart-=8
     hourlyEnd-=8
+    forwardButton.classList.add('active-button')
+  }
+  if(hourlyEnd == 8) {
+    backButton.classList.remove('active-button')
   }
   DOM.setHourlyForecast(weatherdata, hourlyStart, hourlyEnd)
 })

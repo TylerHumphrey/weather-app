@@ -80,22 +80,37 @@ function initWeatherDetails() {
 function initForecast() {
   const forecast = document.createElement('div')
   forecast.classList.add('forecast')
-
-  forecast.appendChild( initDailyForecast() )
-  forecast.appendChild( initHourlyForecast() )
-
-  const buttonContainer = document.createElement('div')
   
+  const buttonContainer = document.createElement('div')
+  buttonContainer.classList.add('button-container')
+ 
   const dailyButton = document.createElement('button')
   dailyButton.classList.add('daily-button')
+  dailyButton.classList.add('active-button')
   dailyButton.textContent = 'Daily'
+  buttonContainer.appendChild(dailyButton)
 
   const hourlyButton = document.createElement('button')
   hourlyButton.classList.add('hourly-button')
   hourlyButton.textContent = 'Hourly'
+  buttonContainer.appendChild(hourlyButton)
 
-  forecast.prepend(hourlyButton)
-  forecast.prepend(dailyButton)
+  const backButton = document.createElement('button')
+  backButton.classList.add('back-hourly')
+  backButton.classList.add('hidden')
+  backButton.textContent = '<'
+
+  const forwardButton = document.createElement('button')
+  forwardButton.classList.add('forward-hourly')
+  forwardButton.classList.add('active-button')
+  forwardButton.classList.add('hidden')
+  forwardButton.textContent = '>'
+  buttonContainer.appendChild(backButton)
+  buttonContainer.appendChild(forwardButton)
+  
+  forecast.appendChild( buttonContainer )
+  forecast.appendChild( initDailyForecast() )
+  forecast.appendChild( initHourlyForecast() )
 
   return forecast
 }
@@ -126,17 +141,6 @@ function initHourlyForecast() {
   hourlyForecastContainer.classList.add('hidden')
   const hourlyForecast = document.createElement('div')
   hourlyForecast.classList.add('hourly-forecast')
-
-  const buttonContainer = document.createElement('div')
-  const backButton = document.createElement('button')
-  backButton.classList.add('back-hourly')
-  backButton.textContent = '<'
-  const forwardButton = document.createElement('button')
-  forwardButton.classList.add('forward-hourly')
-  forwardButton.textContent = '>'
-  buttonContainer.appendChild(backButton)
-  buttonContainer.appendChild(forwardButton)
-  hourlyForecastContainer.appendChild(buttonContainer)
 
   for(let i=0;i<48; i++) {
     const hourContainer = document.createElement('div')
@@ -221,7 +225,7 @@ function setHourlyForecast(weatherData, startTime, endTime) {
   }
 }
 
-function toggleForecast(activeForecast) {
+function toggleForecast() {
   const dailyForecast = document.querySelector('.daily-forecast')
   dailyForecast.classList.toggle('hidden')  
   const hourlyForecast = document.querySelector('.hourly-forecast-container')

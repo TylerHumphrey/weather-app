@@ -48,6 +48,9 @@ img {
   border-radius: 10px;
   border: none;
 }
+.active-button {
+  border: 3px solid rgba(255, 255, 255, 0.8);
+}
 .daily-forecast {
   justify-content: space-evenly;
   flex-wrap:wrap;
