@@ -1,0 +1,51 @@
+:root {
+  --body-bg: rgb(32, 32, 32);
+  --wrapper-bg: rgb(29, 29, 29);
+  --main-bg: rgb(7, 41, 102);
+}
+body {
+  background-color: var(--body-bg);
+  color: white;
+}
+
+main {
+  background-color: var(--main-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.current-weather {
+  background-color: rgb(105, 20, 20);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.weather-info {
+  background-color: rgb(58, 11, 11);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+.weather-details {
+  background-color: rgb(182, 26, 26);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.daily-forecast {
+  background-color: darkblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.hourly-forecast {
+  background-color: darkblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.hidden {
+  display: none;
+}
