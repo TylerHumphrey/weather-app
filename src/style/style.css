@@ -29,7 +29,7 @@ img {
   padding: 10px;
   border-radius: 20px;
   box-shadow: 
-  inset 3px 3px 5px white,
+  inset 1px 1px 3px white,
   3px 3px 5px black
   ;
 }
@@ -44,6 +44,9 @@ img {
 .weather-info {
   flex-direction: column;
   text-transform: capitalize;
+}
+.weather-description, .current-temperature, .city, .current-weather-icon {
+  margin: 0 10px;
 }
 .weather-description {
   font-size: 1.5em;
@@ -63,6 +66,7 @@ img {
 }
 .detail-value {
   font-size: 1.5em;
+  margin-left: 15px;
 }
 .daily-button, .hourly-button, .back-hourly, .forward-hourly {
   background-color: var(--main-bg);
