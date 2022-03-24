@@ -1,7 +1,7 @@
 const apiKey = '156c948ff663e0dcef7a8dcb19efd432'
 
 function getRequestCoordsUrl(zip) {
-  return 'http://api.openweathermap.org/geo/1.0/zip?zip=' + zip + '&appid=' + apiKey
+  return 'https://api.openweathermap.org/geo/1.0/zip?zip=' + zip + '&appid=' + apiKey
 }
 
 function getRequestWeatherUrl(coords) {
