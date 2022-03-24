@@ -177,8 +177,8 @@ function setWeatherInformation(weatherData, locationData) {
   weatherDescription.textContent = weatherData.current.weather[0].description
   city.textContent = locationData.name
   currentTemperature.textContent = Math.round(weatherData.current.temp) + ' \u00B0F'
-  currentWeatherIcon.src = 'http://openweathermap.org/img/wn/' + weatherData.current.weather[0].icon +  '@2x.png'
-
+  currentWeatherIcon.src = 'https://openweathermap.org/img/wn/' + weatherData.current.weather[0].icon +  '@2x.png'
+  document.body.style.backgroundImage = ''
   feelsLike.textContent = Math.round(weatherData.current.feels_like) + ' \u00B0F'
   humidity.textContent = weatherData.current.humidity
   rainChance.textContent = weatherData.daily[0].pop*100 + '%'
@@ -194,7 +194,7 @@ function setDailyForecast(weatherData) {
 
     dayName.textContent = format(addDays(new Date(), i), "eeee")
     dayTemp.textContent = Math.round(weatherData.daily[i].temp.day) + ' \u00B0F'
-    dayIcon.src = 'http://openweathermap.org/img/wn/' + weatherData.daily[i].weather[0].icon +  '.png'
+    dayIcon.src = 'https://openweathermap.org/img/wn/' + weatherData.daily[i].weather[0].icon +  '.png'
   }
 }
 
@@ -216,7 +216,7 @@ function setHourlyForecast(weatherData, startTime, endTime) {
 
     time.textContent = format(addHours(new Date(), i), "h aaa")
     temperature.textContent = Math.round(weatherData.hourly[i].temp) + ' \u00B0F'
-    icon.src = 'http://openweathermap.org/img/wn/' + weatherData.hourly[i].weather[0].icon +  '.png'
+    icon.src = 'https://openweathermap.org/img/wn/' + weatherData.hourly[i].weather[0].icon +  '.png'
   }
 }
 
