@@ -6,6 +6,7 @@
 body {
   background-color: var(--body-bg);
   background-size: cover;
+  background-position: center;
   color: white;
 }
 main {

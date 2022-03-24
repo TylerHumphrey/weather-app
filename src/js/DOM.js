@@ -185,7 +185,7 @@ function setWeatherInformation(weatherData, locationData) {
   currentWeatherIcon.src = 'https://openweathermap.org/img/wn/' + weatherData.current.weather[0].icon +  '@2x.png'
 
   feelsLike.textContent = Math.round(weatherData.current.feels_like) + ' \u00B0F'
-  humidity.textContent = weatherData.current.humidity
+  humidity.textContent = weatherData.current.humidity + '%'
   rainChance.textContent = weatherData.daily[0].pop*100 + '%'
   windSpeed.textContent = Math.round(weatherData.current.wind_speed) + ' mph'
 } 
