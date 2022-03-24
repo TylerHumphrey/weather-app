@@ -2,6 +2,7 @@ import * as API from './API'
 import * as DOM from './DOM'
 import * as Utils from './Utils'
 import '../style/style.css'
+import '../assets/snowy.jpg'
 
 
 
@@ -18,7 +19,7 @@ let weatherdata
 async function initializePage (){
   console.log('Initializing Page')
   DOM.initialize()
-  
+
   coordUrl = await API.getRequestCoordsUrl(48009)
   coords = await API.getCoordsByZip(coordUrl)
   weatherURL = await API.getRequestWeatherUrl(coords)
@@ -36,6 +37,8 @@ const dailyButton = document.querySelector('.daily-button')
 const hourlyButton = document.querySelector('.hourly-button')
 const forwardButton = document.querySelector('.forward-hourly')
 const backButton = document.querySelector('.back-hourly')
+
+document.body.style.backgroundImage = "url('../assets/snowy.jpg')"
 
 // Event Listeners
 dailyButton.addEventListener('click', () => {

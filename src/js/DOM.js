@@ -178,7 +178,7 @@ function setWeatherInformation(weatherData, locationData) {
   city.textContent = locationData.name
   currentTemperature.textContent = Math.round(weatherData.current.temp) + ' \u00B0F'
   currentWeatherIcon.src = 'https://openweathermap.org/img/wn/' + weatherData.current.weather[0].icon +  '@2x.png'
-  document.body.style.backgroundImage = ''
+  
   feelsLike.textContent = Math.round(weatherData.current.feels_like) + ' \u00B0F'
   humidity.textContent = weatherData.current.humidity
   rainChance.textContent = weatherData.daily[0].pop*100 + '%'
